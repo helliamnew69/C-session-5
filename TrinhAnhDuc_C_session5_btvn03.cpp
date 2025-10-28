@@ -1,25 +1,27 @@
 #include <stdio.h>
 
-int main(void) {
-    int a, b, c;
+int main() {
+    float diem;
 
-    printf("Nhap canh a: ");
-    scanf("%d", &a);
+    // Nh?p di?m trung bình
+    printf("Nhap Diem : ");
+    scanf("%f", &diem);
 
-    printf("Nhap canh b: ");
-    scanf("%d", &b);
+    // Ki?m tra di?m có h?p l? hay không
+    if (diem < 0 || diem > 10) {
+        printf("Diem khong hop le. Vui long nhap tu 0 den 10.\n");
+        return 0;
+    }
 
-    printf("Nhap canh c: ");
-    scanf("%d", &c);
-
-    // Ki?m tra n?u c? ba c?nh d?u duong và th?a mãn di?u ki?n tam giác
-    if (a > 0 && b > 0 && c > 0 &&
-        a + b > c &&
-        a + c > b &&
-        b + c > a) {
-        printf("La 3 canh tam giac");
+    // X?p lo?i h?c l?c
+    if (diem >= 8) {
+        printf("Hoc luc gioi\n");
+    } else if (diem >= 6.5) {
+        printf("Hoc luc kha\n");
+    } else if (diem >= 5) {
+        printf("Hoc luc trung binh\n");
     } else {
-        printf("Khong phai 3 canh tam giac");
+        printf("Hoc luc yeu\n");
     }
 
     return 0;
